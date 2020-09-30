@@ -1,0 +1,40 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <div>Admin Panel</div>
+  <span class="nav-tool-items">
+    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap]>
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-book">
+        <mat-icon>add</mat-icon> Add Post
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/books-list">
+        <mat-icon>format_list_bulleted</mat-icon> View Posts
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/users-view">
+        <mat-icon>supervisor_account</mat-icon> View Users
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/tickets-view">
+        <mat-icon>article</mat-icon> View Tickets
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/ticket-inprogress">
+        <mat-icon>article</mat-icon> Inprogress Tickets
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/ticket-completed">
+        <mat-icon>article</mat-icon> Completed Tickets
+      </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
