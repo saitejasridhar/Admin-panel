@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8" >
+
   <table  class="table table-hover" frame=void rules=rows style="border: 2px;">
     <thead>
       <th style="padding: 10px; border-left:1px solid #ccc; border-right: 1px solid #ccc;">Name</th>
@@ -23,12 +23,11 @@
         <td (click)="onEdit(emp)"style="padding: 10px; border-left:1px solid #ccc; border-right: 1px solid #ccc;"> <a download href={{emp.image0}} download > <img src={{emp.image0}} style="width: 100px; height: 60px;"> </a> </td>
         <td (click)="onEdit(emp)" style="padding: 10px; border-left:1px solid #ccc; border-right: 1px solid #ccc;"> <img src={{emp.image1}} style="width: 100px; height: 60px;"></td>
       <td > 
-        <button style="margin:10px; text-align: center;" (click)="oncomp(emp.id,emp.name,emp.email,emp.phone,emp.taddress,emp.tissue,emp.tissue_desc,emp.image0,emp.image1,emp.ttime)">Completed</button> 
+        <button style="margin:10px; text-align: center;" (click)="oncomp(emp.id,emp.userid,emp.name,emp.phone,emp.email,emp.taddress,emp.tissue,emp.tissue_desc,emp.image0,emp.image1,emp.ttime)">Completed</button> 
       </td>
       </tr>
     </tbody>
   </table>
-  </div> 
   
   
   

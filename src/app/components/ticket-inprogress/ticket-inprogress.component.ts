@@ -34,10 +34,10 @@ export class TicketInprogressComponent implements OnInit {
   
  
 
-    oncomp(id:string,name:string,phone:string,email:string,address:string,issue:string,issue_desc:string,image:string,image1:string,time:string)
+    oncomp(id:string,userid:string,name:string,phone:string,email:string,address:string,issue:string,issue_desc:string,image:string,image1:string,time:string)
     {
      
-      this.firestore.collection('tickets_complete').doc(id).set({'name':name,'phone':phone,'taddress':address,'tissue':issue,'tissue_desc':issue_desc,'image0':image,'image1':image1,'ttime':time});
+      this.firestore.collection('tickets_complete').doc(id).set({'name':name,'phone':phone,'email':email,'taddress':address,'tissue':issue,'tissue_desc':issue_desc,'image0':image,'image1':image1,'ttime':time,'userid':userid});
       this.firestore.doc('tickets_pending/' + id).delete();
 
     }

@@ -9,4 +9,5 @@ export class Ticket{
     tissue_desc:String;
     image0:String;
     image1:String;
+    userid:String;
 }

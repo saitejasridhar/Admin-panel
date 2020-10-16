@@ -40,17 +40,17 @@ export class TicketsViewComponent implements OnInit {
     }
   
  
-    onInprogress(id:string,name:string,email:string,phone:string,address:string,issue:string,issue_desc:string,image:string,image1:string,time:string)
+    onInprogress(id:string,userid:string,name:string,email:string,phone:string,address:string,issue:string,issue_desc:string,image:string,image1:string,time:string)
 
     {
-      this.firestore.collection('tickets_pending').doc(id).set({'name':name,'email':email,'phone':phone,'taddress':address,'tissue':issue,'tissue_desc':issue_desc,'image0':image,'image1':image1,'ttime':time})
+      this.firestore.collection('tickets_pending').doc(id).set({'name':name,'email':email,'phone':phone,'taddress':address,'tissue':issue,'tissue_desc':issue_desc,'image0':image,'image1':image1,'ttime':time,'userid':userid})
       this.firestore.doc('tickets/' + id).delete();
     }
 
-    oncomplete(id:string,name:string,phone:string,email:string,address:string,issue:string,issue_desc:string,image:string,image1:string,time:string)
+    oncomplete(id:string,userid:string,name:string,phone:string,email:string,address:string,issue:string,issue_desc:string,image:string,image1:string,time:string)
     {
       this.firestore.doc('tickets/' + id).delete();
-      this.firestore.collection('tickets_complete').doc(id).set({'name':name,'email':email,'phone':phone,'taddress':address,'tissue':issue,'tissue_desc':issue_desc,'image0':image,'image1':image1,'ttime':time})
+      this.firestore.collection('tickets_complete').doc(id).set({'name':name,'email':email,'phone':phone,'taddress':address,'tissue':issue,'tissue_desc':issue_desc,'image0':image,'image1':image1,'ttime':time,'userid':userid})
 
     }
   
