@@ -59,7 +59,7 @@ export class EditBookComponent implements OnInit {
     var id = this.actRoute.snapshot.paramMap.get('id');
     this.bookApi.GetBook(id).valueChanges().subscribe(data => {
       this.languageArray = data.languages;
-      this.editBookForm.setValue(data);
+      // this.editBookForm.setValue(data);
     })
   }
 
@@ -70,12 +70,9 @@ export class EditBookComponent implements OnInit {
       address: ['', [Validators.required]],
       time: ['', [Validators.required]],
       profilePic:['',[Validators.required]]
- 
     })
   }
-
-
-
+  
   /* Get errors */
   public handleError = (controlName: string, errorName: string) => {
     return this.editBookForm.controls[controlName].hasError(errorName);
